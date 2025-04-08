@@ -1,0 +1,38 @@
+.header{
+    position: sticky;
+    top:0;
+    background: var(--background);
+    width: 100%;
+    transition: all 0.5s;
+    border-bottom: 1px solid var(--background);
+    border-color: color-mix(in srgb, var(--background) 90%, white 20%);
+    margin:0;
+}
+.menu{
+    width:80%;
+    margin:0 auto;
+}
+.active{
+    color:var(--accent);
+}
+
+/*Pregunta para celular*/
+@media only screen and  (min-width: 0px) and (max-width: 540px){
+    .header{
+        height: auto;
+        padding-top: 10px;
+    }
+}
+
+/*Pregunta para tablet*/
+@media only screen and (min-width: 541px) and (max-width: 1024px){ 
+    .header{
+        height: 50px;
+    }
+}
+
+/*Pregunta para escritorio*/
+@media only screen and (min-width: 1025px){
+
+}
+  
