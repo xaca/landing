@@ -17,8 +17,16 @@ async function traerDatos()
     return response.value;
 }
 
+function parseData(data:any){
+   let temp:string[] = [];
+   for(let i in data){
+    temp.push(data[i].id);
+   }
+   return temp;
+}
+
 export default function Galeria(){
-    const[datos,setDatos] = useState("");
+    const[datos,setDatos] = useState<string[]>([]);
     useEffect(()=>{
         /*axios.get('https://cataas.com/api/cats')
         .then(function (response) {
@@ -33,24 +41,24 @@ export default function Galeria(){
         .finally(function () {
         // always executed
         });*/
-        setDatos("1,2,3,4");
-        console.log(datos);
-        /*let url = "https://cataas.com/api/cats";
+        
+        let url = "https://cataas.com/api/cats";
         fetch(url)
         .then((response) => {
             return response.json();
         })
         .then((data) => {
-            setDatos(data);
+            setDatos(parseData(data));
         });
-        console.log(datos)*/
     },[]);
 
-    return(<>
-    {datos.split(",").map((dato,index)=>{
-        dato
-    })}
+    return(<>      
     <Menu />
+    <div className="grid grid-cols-4 gap-4 w-[800px] mx-auto h-auto" >
+    {datos.map((dato:any,index:number)=>{
+        return <img key={index} className="blur-xs hover:filter-none size-48 inline-block" src={`https://cataas.com/cat/${dato}`} alt="cat" />
+    })}
+    </div>
     <h1>Galeria</h1>
     </>);
 }
