@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Menu from "../../components/ui/menu/menu"
 //import axios from 'axios';
 
 async function traerDatos()
@@ -25,7 +24,7 @@ function parseData(data:any){
    return temp;
 }
 
-export default function Galeria(){
+export function Gallery(){
     const[datos,setDatos] = useState<string[]>([]);
     useEffect(()=>{
         /*axios.get('https://cataas.com/api/cats')
@@ -53,7 +52,6 @@ export default function Galeria(){
     },[]);
 
     return(<>      
-    <Menu />
     <div className="grid grid-cols-4 gap-4 w-[800px] mx-auto h-auto" >
     {datos.map((dato:any,index:number)=>{
         return <img key={index} className="blur-xs hover:filter-none size-48 inline-block" src={`https://cataas.com/cat/${dato}`} alt="cat" />

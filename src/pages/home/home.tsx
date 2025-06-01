@@ -1,8 +1,6 @@
-import Menu from "../../components/ui/menu/menu"
 
-export default function Home(){
+export function Home(){
     return(<>
-    <Menu />
     <h1>Home</h1>
     <p>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa repellendus at exercitationem vero. Nisi repudiandae id omnis enim harum quasi minima. Accusantium porro repellat ratione earum reiciendis suscipit. Itaque, porro!

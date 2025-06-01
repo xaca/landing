@@ -1,10 +1,7 @@
-import React from "react";
-import Menu from "../../components/ui/menu/menu"
-import Bienvenida from "./bienvenida";
+import {Welcome} from "./Welcome";
 
-export default function About(){
+export function About(){
     return (<>
-    <Menu />
-    <Bienvenida className="mx-auto px-7 w-full md:w-[600px]" />
+    <Welcome className="mx-auto px-7 w-full md:w-[600px]" />
     </>);
 }
