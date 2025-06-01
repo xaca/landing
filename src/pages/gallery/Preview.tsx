@@ -1,10 +1,12 @@
-import { useParams,Navigate, NavLink } from "react-router";
-import { Cat } from "@/types/Cat";
+import { useParams, NavLink, useNavigate } from "react-router";
 import { useState,useEffect } from "react";
+import { Cat } from "@/types/Cat";
 
 export function Preview(){
+    const navigate = useNavigate();
     const {id} = useParams();
     const [gato,setGato] = useState<Cat | null>(null);
+
     useEffect(()=>{
         const datos = localStorage.getItem("gatos");
         console.log(id,datos);
@@ -12,7 +14,11 @@ export function Preview(){
             const gatos = JSON.parse(datos);
             const gato = gatos.find((gato:Cat)=>gato.id === id);
             setGato(gato);
+            if(!gato){
+                navigate("/gallery");
+            }
         }
+       
     },[id]);
     return(
         <section className="container mx-auto px-4 py-8 ">
