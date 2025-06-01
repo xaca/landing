@@ -9,7 +9,7 @@ export function Menu(){
                 <NavLink to="/" className="mr-4 uppercase text-white">Home</NavLink>
                 <NavLink to="/about" className="mr-4 uppercase text-white">About</NavLink>
                 <NavLink to="/gallery" className="mr-4 uppercase text-white">Gallery</NavLink>
-                <NavLink to="/services" className="mr-4 uppercase text-white">services</NavLink>
+                <NavLink to="/services" className="mr-4 uppercase text-white">Services</NavLink>
                 <NavLink to="/contact" className="mr-4 uppercase text-white">Contact</NavLink>
             </nav>
         </section>);
